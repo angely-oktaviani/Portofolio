@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartQueue Case Study — Jeco</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: '#4B1D3F',
+            'burgundy-dark': '#38142e',
+            nude: '#E8D9C1',
+            'nude-card': '#f1e6d4',
+            'rose-smoke': '#D8A7B1',
+            'off-black': '#1B1B1B'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #8C7355; color: #1B1B1B; }
+    .font-editorial { font-family: 'Cormorant Garamond', Georgia, serif; }
+  </style>
+</head>
+
+<body class="p-3 sm:p-8 flex justify-center items-start min-h-screen">
+  <main class="w-full max-w-4xl bg-nude shadow-2xl rounded-[2.5rem] overflow-hidden border-[6px] border-[#9E8566]/40 p-6 sm:p-12">
+    
+    <!-- Top Back Navigation -->
+    <a href="index.html" class="inline-flex items-center gap-2 text-burgundy font-semibold text-xs tracking-wider uppercase mb-8 hover:text-rose-smoke transition-colors">
+      <i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio
+    </a>
+
+    <!-- Header Case Study -->
+    <header class="mb-10 border-b border-burgundy/20 pb-8">
+      <span class="text-xs font-mono uppercase tracking-[0.25em] text-burgundy font-bold">Case Study • PKM-KC</span>
+      <h1 class="font-editorial text-4xl sm:text-6xl text-burgundy font-normal tracking-tight mt-2 mb-4">
+        SmartQueue: Real-Time Clinic Live Ticket System
+      </h1>
+      <p class="text-sm sm:text-base text-off-black/85 font-light leading-relaxed">
+        Menghilangkan penumpukan antrean fisik di fasilitas kesehatan primer melalui arsitektur komunikasi WebSocket dua arah dan antarmuka mobile yang intuitif.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 text-xs text-burgundy">
+        <div>
+          <span class="font-bold block uppercase tracking-wider text-[10px] text-burgundy/60">Role</span>
+          UI/UX & Backend Dev
+        </div>
+        <div>
+          <span class="font-bold block uppercase tracking-wider text-[10px] text-burgundy/60">Timeline</span>
+          June 2026
+        </div>
+        <div>
+          <span class="font-bold block uppercase tracking-wider text-[10px] text-burgundy/60">Design Tool</span>
+          Figma (Tokens & IA)
+        </div>
+        <div>
+          <span class="font-bold block uppercase tracking-wider text-[10px] text-burgundy/60">Core Stack</span>
+          Node.js, Express, Socket.io
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Sections -->
+    <article class="space-y-12 text-sm sm:text-[15px] leading-relaxed text-off-black/90 font-light">
+      
+      <!-- 01. Problem Space -->
+      <section>
+        <h2 class="font-editorial text-2xl sm:text-3xl text-burgundy font-semibold mb-3">01. The Problem Space</h2>
+        <p class="mb-3">
+          Sistem antrean konvensional memaksa pasien menunggu di ruang tunggu yang sempit dalam durasi tidak menentu. Hal ini meningkatkan stres pasien dan risiko penularan infeksi silang di lingkungan klinik.
+        </p>
+      </section>
+
+      <!-- 02. Design Gallery (Frame Scroll Horizontal untuk Gambar Figma) -->
+      <section class="bg-nude-card p-6 sm:p-8 rounded-3xl border border-burgundy/15">
+        <h2 class="font-editorial text-2xl sm:text-3xl text-burgundy font-semibold mb-3">02. Design Decisions & Visual System</h2>
+        <p class="mb-4">
+          Hierarki visual dipusatkan pada keterbacaan nomor antrean, kontras warna yang nyaman, serta alur tanpa hambatan (*zero-friction* tanpa perlu registrasi akun rumit).
+        </p>
+
+<!-- FRAME SCROLL DESIGN -->
+        <div class="mt-4">
+          <div class="flex items-center justify-between pb-2 text-xs text-burgundy/70 font-mono">
+            <span>FIGMA INTERFACE ARTIFACTS</span>
+            <span>Scroll horizontal ➔</span>
+          </div>
+
+          <div class="flex gap-5 overflow-x-auto pb-4 pt-1 snap-x scrollbar-thin">
+            <!-- 01. Login Page -->
+            <div class="w-[230px] flex-shrink-0 bg-off-black rounded-[2rem] p-2 border-2 border-burgundy/30 shadow-md snap-start">
+              <div class="w-full h-[460px] rounded-[1.4rem] overflow-hidden bg-white">
+                <img src="images/smartqueue-login.png" alt="Login Page" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/400x800/4B1D3F/E8D9C1?text=Login'"/>
+              </div>
+              <p class="text-[11px] text-nude text-center mt-2 font-mono">01. Login Page</p>
+            </div>
+
+            <!-- 02. Kedatangan -->
+            <div class="w-[230px] flex-shrink-0 bg-off-black rounded-[2rem] p-2 border-2 border-burgundy/30 shadow-md snap-start">
+              <div class="w-full h-[460px] rounded-[1.4rem] overflow-hidden bg-white">
+                <img src="images/smartqueue-kedatangan.png" alt="Kedatangan" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/400x800/4B1D3F/E8D9C1?text=Kedatangan'"/>
+              </div>
+              <p class="text-[11px] text-nude text-center mt-2 font-mono">02. Kedatangan</p>
+            </div>
+
+            <!-- 03. Home Page Petugas -->
+            <div class="w-[230px] flex-shrink-0 bg-off-black rounded-[2rem] p-2 border-2 border-burgundy/30 shadow-md snap-start">
+              <div class="w-full h-[460px] rounded-[1.4rem] overflow-hidden bg-white">
+                <img src="images/smartqueue-homepagepetugas.png" alt="Home Page Petugas" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/400x800/4B1D3F/E8D9C1?text=Home+Petugas'"/>
+              </div>
+              <p class="text-[11px] text-nude text-center mt-2 font-mono">03. Home Page Petugas</p>
+            </div>
+
+            <!-- 04. Login Petugas -->
+            <div class="w-[230px] flex-shrink-0 bg-off-black rounded-[2rem] p-2 border-2 border-burgundy/30 shadow-md snap-start">
+              <div class="w-full h-[460px] rounded-[1.4rem] overflow-hidden bg-white">
+                <img src="images/smartqueue-loginpetugas.png" alt="Login Petugas" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/400x800/4B1D3F/E8D9C1?text=Login+Petugas'"/>
+              </div>
+              <p class="text-[11px] text-nude text-center mt-2 font-mono">04. Login Petugas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03. Engineering (Frame Scroll Vertikal untuk Codingan) -->
+      <section>
+        <h2 class="font-editorial text-2xl sm:text-3xl text-burgundy font-semibold mb-3">03. Engineering Architecture & Codebase</h2>
+        <p class="mb-4">
+          Menggunakan WebSockets (Socket.io) untuk transmisi data dua arah secara instan antara loket admin dan perangkat pasien tanpa membebani server dengan *HTTP polling*.
+        </p>
+
+        <!-- DEDICATED CODE SCROLL FRAME -->
+        <div class="rounded-2xl overflow-hidden border border-burgundy/25 shadow-2xl bg-[#141414] my-4">
+          <div class="bg-off-black px-4 py-3 flex items-center justify-between border-b border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block"></span>
+              <span class="text-xs text-rose-smoke/70 font-mono ml-3">server/sockets/queueHandler.js</span>
+            </div>
+            <span class="text-[11px] text-nude/40 font-mono">Node.js • Socket.io</span>
+          </div>
+
+          <div class="p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-y-auto max-h-[360px] text-[#E8D9C1]">
+            <pre class="m-0"><code>// 1. Inisialisasi Modul & Dependencies
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: { origin: "*", methods: ["GET", "POST"] }
+});
+
+// 2. Handler Koneksi WebSocket Real-Time
+io.on('connection', (socket) => {
+  console.log(`[Socket Connected]: ${socket.id}`);
+
+  // Pasien bergabung ke ruang antrean klinik
+  socket.on('join-clinic-room', ({ roomCode }) => {
+    socket.join(`clinic-${roomCode}`);
+  });
+
+  // Petugas loket memanggil nomor antrean berikutnya
+  socket.on('call-next-ticket', async (payload) => {
+    try {
+      const { clinicId, officerId } = payload;
+      const nextTicket = await advanceQueue(clinicId, officerId);
+
+      // Broadcast nomor tiket terbaru ke seluruh pasien secara live
+      io.to(`clinic-${clinicId}`).emit('queue-updated', {
+        currentTicketNumber: nextTicket.number,
+        targetRoom: nextTicket.room,
+        estimatedWaitTime: nextTicket.estimatedMinutes,
+        updatedAt: new Date().toISOString()
+      });
+    } catch (err) {
+      socket.emit('queue-error', { error: 'Gagal memproses antrean.' });
+    }
+  });
+
+  socket.on('disconnect', () => {
+    console.log(`[Disconnected]: ${socket.id}`);
+  });
+});
+
+server.listen(5000, () => {
+  console.log('SmartQueue WebSockets active on port 5000 🚀');
+});</code></pre>
+          </div>
+          
+          <div class="bg-off-black/80 px-4 py-1.5 border-t border-white/5 flex justify-between items-center text-[10px] text-nude/40 font-mono">
+            <span>Scroll up/down to see all code</span>
+            <span>JavaScript (ES6+)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. Key Takeaways -->
+      <section class="border-t border-burgundy/20 pt-8">
+        <h2 class="font-editorial text-2xl sm:text-3xl text-burgundy font-semibold mb-3">04. Key Takeaways</h2>
+        <p>
+          Menyinkronkan desain UI modular dengan transmisi event WebSocket menghasilkan pengalaman pemantauan nomor antrean tanpa jeda dan menghilangkan kekhawatiran nomor terlewat.
+        </p>
+      </section>
+
+    </article>
+
+    <!-- Bottom Navigation -->
+    <div class="mt-12 pt-8 border-t border-burgundy/20 flex justify-between items-center">
+      <a href="index.html" class="px-6 py-2.5 bg-burgundy text-nude rounded-full text-xs font-semibold hover:bg-burgundy-dark transition-all">
+        ← Kembali ke Portofolio
+      </a>
+      <a href="#" class="text-xs text-burgundy font-mono hover:underline">
+        Top of page ↑
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>
